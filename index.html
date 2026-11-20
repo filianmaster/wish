@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+  <title>WISH — Мир желаний</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {"imports":{"three":"./node_modules/three/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <main id="landing" class="screen">
+    <div class="landing-glow"></div>
+    <div class="brand">WISH<span>✦</span></div>
+    <p class="eyebrow">МИР, КОТОРЫЙ ОТКЛИКАЕТСЯ НА ТВОИ МЫСЛИ</p>
+    <h1>А что, если<br><em>желания становятся реальностью?</em></h1>
+    <p class="intro">Загадай желание. Исследуй мир. Посмотри, что появится.</p>
+    <button id="enterBtn" class="primary">ВОЙТИ В МИР <span>→</span></button>
+    <div class="hint">ПРОТОТИП · ТВОЁ ПРИКЛЮЧЕНИЕ НАЧИНАЕТСЯ ЗДЕСЬ</div>
+  </main>
+
+  <section id="world" class="hidden">
+    <canvas id="scene"></canvas>
+    <header class="hud">
+      <div class="hud-brand">WISH <small>WORLD</small></div>
+      <div class="hud-tip">WASD — движение · мышь — обзор · SHIFT — бег · E — взаимодействие</div>
+      <button id="backBtn" class="small-button">В МЕНЮ</button>
+    </header>
+    <div class="wish-panel">
+      <div class="panel-label">СОТВОРИ СВОЁ ЖЕЛАНИЕ</div>
+      <div class="wish-row">
+        <input id="wishInput" maxlength="100" placeholder="Например: хочу увидеть красивый лес..." autocomplete="off">
+        <button id="wishBtn">СОТВОРИТЬ</button>
+      </div>
+      <p id="wishMessage">Напиши желание — мир попробует воплотить его.</p>
+    </div>
+    <div class="crosshair">+</div>
+    <div id="toast" class="toast"></div>
+  </section>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

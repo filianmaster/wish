@@ -1,0 +1,18 @@
+{
+  "name": "wish-game",
+  "version": "0.1.0",
+  "description": "WISH - a world where wishes become part of the game",
+  "main": "electron.js",
+  "author": "WISH Project",
+  "license": "UNLICENSED",
+  "scripts": { "start": "electron .", "build:win": "electron-builder --win portable zip" },
+  "dependencies": { "three": "0.180.0" },
+  "devDependencies": { "electron": "38.2.0", "electron-builder": "26.0.12" },
+  "build": {
+    "appId": "com.wish.game",
+    "productName": "WISH",
+    "directories": { "output": "dist" },
+    "files": ["src/**/*", "assets/**/*", "index.html", "style.css", "electron.js", "package.json", "node_modules/three/**/*"],
+    "win": { "target": ["portable", "zip"], "artifactName": "WISH-${version}-${arch}.${ext}" }
+  }
+}
